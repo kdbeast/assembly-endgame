@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { languages } from "./languages";
 
 const Main = () => {
+  const [currentWord, setCurrentWord] = useState("react");
+
   return (
     <main>
       <section className="game-status">
@@ -16,6 +19,11 @@ const Main = () => {
           >
             {lang.name}
           </span>
+        ))}
+      </section>
+      <section className="word">
+        {currentWord.split("").map((word, index) => (
+          <span key={index}>{word.toUpperCase()}</span>
         ))}
       </section>
     </main>
