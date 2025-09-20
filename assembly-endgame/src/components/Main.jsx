@@ -4,6 +4,8 @@ import { languages } from "./languages";
 const Main = () => {
   const [currentWord, setCurrentWord] = useState("react");
 
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
   return (
     <main>
       <section className="game-status">
@@ -26,6 +28,12 @@ const Main = () => {
           <span key={index}>{word.toUpperCase()}</span>
         ))}
       </section>
+      <section className="keyboard">
+        {alphabet.split("").map((letter) => (
+          <button key={letter}>{letter.toUpperCase()}</button>
+        ))}
+      </section>
+      <button className="new-game">New Game</button>
     </main>
   );
 };
